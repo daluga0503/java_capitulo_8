@@ -1,4 +1,4 @@
-package java_capitulo_8.matematicas;
+package matematicas;
 
 public class funciones{
 
@@ -38,13 +38,8 @@ public static int voltea(int x){
             }
             numero++;
         }
-        return numero -1;
+        return numero-1;
     }
-
-
-    
-
-
 
 
 
