@@ -1,5 +1,7 @@
 package matematicas;
 
+import java.util.function.LongFunction;
+
 public class funciones{
 
 public static int voltea(int x){
@@ -39,6 +41,37 @@ public static int voltea(int x){
             numero++;
         }
         return numero-1;
+    }
+
+    public static long potencia(int base, int exponente){
+        long suma=1;
+        int i=0;
+        for(i=1; i<exponente; i++){
+            suma=suma*base;
+        }
+        return suma;
+    }
+
+    public static int digitos(int x){
+        int longitud=0;
+        while(x>0){
+            x=x/10;
+            longitud++;
+        }
+        return longitud;
+    }
+
+    public static int digitoN(int x, int posicion){
+        int digito=1;
+        x=voltea(x);
+
+        for(int i=0;i<=posicion;i++){
+            x/=10;
+            if(i==posicion-1){
+                digito=x%10;
+            }
+        }
+        return digito;
     }
 
 
