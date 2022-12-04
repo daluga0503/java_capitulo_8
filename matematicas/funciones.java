@@ -46,7 +46,7 @@ public static int voltea(int x){
     public static long potencia(int base, int exponente){
         long suma=1;
         int i=0;
-        for(i=1; i<exponente; i++){
+        for(i=1; i<=exponente; i++){
             suma=suma*base;
         }
         return suma;
@@ -61,14 +61,14 @@ public static int voltea(int x){
         return longitud;
     }
 
-    public static int digitoN(int x, int posicion){
+    public static int digitoN(int numero, int posicion){
         int digito=1;
-        x=voltea(x);
+        numero=voltea(numero);
 
         for(int i=0;i<=posicion;i++){
-            x/=10;
+            numero/=10;
             if(i==posicion-1){
-                digito=x%10;
+                digito=numero%10;
             }
         }
         return digito;
