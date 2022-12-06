@@ -6,5 +6,6 @@ public class ejercicio6 {
         int numero=sc.nextInt();
 
         System.out.println("El número introducido volteado es el siguiente: " + matematicas.funciones.voltea(numero));
+        sc.close();
     }
 }
