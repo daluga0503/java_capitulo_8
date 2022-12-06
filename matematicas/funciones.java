@@ -1,7 +1,5 @@
 package matematicas;
 
-import java.util.function.LongFunction;
-
 public class funciones{
 
 public static int voltea(int x){
@@ -73,6 +71,79 @@ public static int voltea(int x){
         }
         return digito;
     }
+
+    public static void posicionDeDigito(int numero, int digito){
+        numero=voltea(numero);
+        int contador=digitos(numero);
+        int copia = contador;
+        boolean salir = true;
+
+        while (salir) {
+            if(numero%10==digito){
+                salir=false;
+            }
+            contador--;
+            numero/=10;
+            if(contador==0){
+                salir=false;
+            }
+        }
+
+        if(contador==0){
+            System.out.println("-1");
+        }else{
+            System.out.println("La posición es la: "+(copia-contador));
+            }
+    }
+
+        public static int quitaPorDetras(int numero, int digito){
+            for(int i = 1; i<=digito; i++){
+                numero=numero/10;
+            }
+            return numero;
+        }
+
+        public static int quitaPorDelante(int numero, int digito){
+            numero=voltea(numero);
+
+            numero=quitaPorDetras(numero, digito);
+
+            numero=voltea(numero);
+
+            return numero;
+        }
+
+
+        public static int pegaPorDetras(int numero, int digito){
+            numero=numero*10+digito;
+            return numero;
+        }
+
+        public static int pegaPordelante(int numero, int digito){
+            numero=voltea(numero);
+            numero=pegaPorDetras(numero, digito);
+            numero=voltea(numero);
+            
+            return numero;
+        }
+
+
+        public static int juntaNumeros(int numero1, int numero2){
+            int digitos=digitos(numero2);
+            return numero1*(int)(Math.pow(10, digitos))+numero2;
+        }
+    
+        public static int trozoDeNumero(int numero, int principio,int fin){
+    
+            int ultimo=digitos(numero)-fin;
+    
+            numero=quitaPorDelante(numero,principio);
+    
+            numero=quitaPorDetras(numero, ultimo);
+    
+            return numero;
+        }
+
 
 
 
