@@ -60,4 +60,26 @@ public class array {
         
         return total/array.length;
     }
+
+    public static boolean estaEnArrayInt(int array[], int numero){
+
+        for(int i=0;i<array.length;i++){
+            if(numero==array[i]){
+                return true;
+            }
+        }
+        
+        return false;
+    }
+
+    public static int posicionEnArray(int array[], int numero){
+
+
+        for(int i=0;i<array.length;i++){
+            if(numero==array[i]){
+                return i;
+            }
+        }
+        return -1;
+    }
 }
